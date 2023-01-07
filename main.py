@@ -2,6 +2,7 @@ from datetime import datetime
 from pathlib import Path
 import os
 import re
+import subprocess
 
 
 def get_path(path):
@@ -54,6 +55,8 @@ def main():
                 if line[0:14] == '  --compressed':  # Last line of request
                     download_script.write(f'  -o {download_filename} \\\n')
                 download_script.write(line)
+
+    subprocess.run(['bash', 'download.sh'], shell=True)
 
 
 if __name__ == '__main__':
