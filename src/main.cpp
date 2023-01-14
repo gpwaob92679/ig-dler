@@ -73,7 +73,7 @@ int main() {
 		std::string line;
 		while (std::getline(all, line)) {
 			if (line.substr(0, 4) == "curl") {
-				std::regex pattern("[A-Z0-9]*_video_dashinit\.mp4*");
+				std::regex pattern("[A-Z0-9]*_video_dashinit\\.mp4*");
 				std::smatch match;
 
 				bool found = regex_search(line, match, pattern);
